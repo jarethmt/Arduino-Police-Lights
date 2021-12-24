@@ -15,12 +15,17 @@ void setup() {
 }
 
 void loop() { 
-  PatternOne(10);
-  PatternTwo(10);
-  PatternThree(8);
+  LooAtMeImACop(10);
+  TwinkleTwinkle(10);
+  NightRider(5);
+  WitnessMe(12);
 }
 
-void PatternOne(int loopCount){
+
+
+// PATTERNS LISTED BELOW, CALL THEM IN THE LOOP WITH A RUN COUNT TO TRIGGER //
+
+void LooAtMeImACop(int loopCount){
 
   if(!loopCount){
     loopCount = 5;
@@ -57,7 +62,7 @@ void PatternOne(int loopCount){
   }
 }
 
-void PatternTwo(int loopCount){
+void TwinkleTwinkle(int loopCount){
   if(!loopCount){
     loopCount = 5;
   }
@@ -73,7 +78,7 @@ void PatternTwo(int loopCount){
 }
 
 
-void PatternThree(int loopCount){
+void NightRider(int loopCount){
   if(!loopCount){
     loopCount = 5;
   }
@@ -101,8 +106,30 @@ void PatternThree(int loopCount){
 }
 
 
+void WitnessMe(int loopCount){
+  if(!loopCount){
+    loopCount = 5;
+  }
+  for(int i = 0; i < loopCount; i++){
+    HalfOn(0, CRGB::Red);
+    HalfOn(1, CRGB::White);
+    FastLED.show();
+    delay(150);
+    
+    HalfOn(0, CRGB::White);
+    HalfOn(1, CRGB::Blue);
+    FastLED.show();
+    delay(150);
+  } 
+}
 
-//Helpers to be used within patterns above
+
+
+
+
+
+
+// Helpers to be used within patterns above //
 
 void HalfOn(int half, CRGB color){
   int halfLeds = NUM_LEDS / 2;
